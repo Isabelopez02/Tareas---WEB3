@@ -10,6 +10,14 @@ contract TaskContract {
         createTask("ejemplo de tarea", "tengo que hacer algo");
     }
 
+    event TaskCreate(
+        uint id,
+        string tittle,
+        string descripcion,
+        bool done,
+        uint createdAt
+    );
+
     // Atributos de la tarea
     struct Task{
         uint256 id;
@@ -22,9 +30,10 @@ contract TaskContract {
     mapping (uint256 => Task) public tasks;
     
     // Crear Tarea
-    function createTask(string memory _title, string memory _descipcion) public {
+    function createTask(string memory _tittle, string memory _descripcion) public {
         contador++;
-        tasks[contador] = Task(contador, _title, _descipcion, false, block.timestamp);
+        tasks[contador] = Task(contador, _tittle, _descripcion, false, block.timestamp);
+        emit TaskCreate(contador, _tittle, _descripcion, false, block.timestamp);
     }
 
     // Cambiar estado

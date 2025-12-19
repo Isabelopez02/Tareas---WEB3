@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/libs/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./main.css" />
+  </head>
+  <body>
+    <div class="container py-5">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="wallet-bank">
+            <div class="wallet-bank-header">
+              <div class="wallet-bank-icon">🏦</div>
+
+              <div>
+                <h6 class="wallet-bank-title">Digital Wallet</h6>
+                <small class="wallet-bank-subtitle">Admin Dashboard</small>
+              </div>
+            </div>
+
+            <div class="wallet-bank-divider"></div>
+
+            <div class="wallet-bank-info">
+              <span class="wallet-bank-label">Wallet Address</span>
+              <div class="wallet-bank-address" id="account">0x1234...ABCD</div>
+            </div>
+
+            <div class="wallet-bank-footer">
+              <span class="wallet-bank-status">
+                <span class="wallet-bank-dot"></span>
+                Connected
+              </span>
+            </div>
+          </div>
+
+          <form class="task-form-bank" id="taskForm">
+            <h6 class="task-form-title">Nueva tarea</h6>
+
+            <div class="task-form-group">
+              <label>Título</label>
+              <input name="tittle" type="text" placeholder="Ej. Pagar proveedor" />
+            </div>
+
+            <div class="task-form-group">
+              <label>Descripción</label>
+              <textarea name="descripcion" rows="3" placeholder="Detalles de la tarea"></textarea>
+            </div>
+
+            <button type="submit" class="task-form-btn">Guardar tarea</button>
+          </form>
+        </div>
+        <div class="col">
+          <div class="col-md-8" id="taskList">task list</div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="./libs/@truffle/contract/browser-dist/truffle-contract.min.js"></script>
+  <script src="./app.js"></script>
+  <script src="./ui.js"></script>
+</html>
