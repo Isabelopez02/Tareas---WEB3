@@ -1,9 +1,13 @@
+
 App = {
   contract: {},
-  init: () => {
+  init: async () => {
     console.log("cargando");
-    App.loadEthereum();
-    App.loadContract();
+    await App.loadEthereum();
+    await App.loadContract();
+    await App.loadCuenta();
+    await App.render();
+    await App.renderTask();
   },
 
   loadEthereum: async () => {
@@ -16,6 +20,14 @@ App = {
     } else {
       console.log("no Instalado etherum");
     }
+  },
+
+  loadCuenta: async () => {
+    const cuenta = await window.ethereum.request({
+      method: "eth_requestAccounts",
+    });
+    App.cuenta = cuenta[0];
+    console.log("Cuenta conectada:", App.cuenta);
   },
 
   loadContract: async () => {
@@ -37,10 +49,78 @@ App = {
       console.log("¡Contrato cargado con éxito!", App.taskContract.address);
     } catch (error) {
       console.error(
-        "Error de mismatch: El ID " + networkId + " no está en el JSON o el contrato no se migró."
+        "Error de mismatch: El ID " +
+          networkId +
+          " no está en el JSON o el contrato no se migró."
       );
     }
   },
+
+  // Mostrar la cuenta en el html
+  render: () => {
+    document.getElementById("account").innerText = App.cuenta;
+  },
+
+  renderTask: async () => {
+    const contarTarea = await App.taskContract.contador();
+    const numeroTarea = contarTarea.toNumber();
+    console.log(numeroTarea);
+
+    let html = "";
+
+    for (let i = 1; i <= numeroTarea; i++) {
+      const task = await App.taskContract.tasks(i);
+      const tareaId = task[0].toNumber();
+      const tareaTitle = task[1];
+      const tareaDescripcion = task[2];
+      const tareaHecha = task[3];
+      const tareaCreada = task[4].toNumber();
+
+      let taskElement = `
+      <div class="task-card">
+  <div class="task-card-header">
+    <span class="task-card-title">${tareaTitle}</span>
+    <div class="form-check form-switch task-card-switch">
+      <input class="form-check-input" type="checkbox" data-id="${tareaId}" 
+        ${tareaHecha && "checked"} 
+        onchange="App.toggleDone(this)"
+      />
+    </div>
+  </div>
+  <div class="task-card-body">
+    <p>${tareaDescripcion}</p>
+    <small>Creado: ${new Date(tareaCreada * 1000).toLocaleString()}</small>
+  </div>
+</div>
+
+    `;
+    html += taskElement;
+  }
+
+    document.querySelector('#taskList').innerHTML = html;
+  },
+
+  createTask: async (tittle, descripcion) => {
+    try {
+      const resultado = await App.taskContract.createTask(tittle, descripcion, {
+        from: App.cuenta,
+      });
+
+      console.log("Tarea creada:", resultado.logs[0].args);
+    } catch (error) {
+      // Si sale un error de "out of gas", intenta agregar un límite manual:
+      console.error("Error detallado:", error);
+    }
+  },
+
+  toggleDone: async(element) => {
+    const tareaId = element.dataset.id;
+
+    await App.taskContract.estadoTask(tareaId, {
+        from: App.cuenta
+    });
+
+    window.location.reload();
+  }
 };
 
-App.init();

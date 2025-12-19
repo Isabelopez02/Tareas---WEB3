@@ -63,6 +63,7 @@ body {
 }
 
 .wallet-bank-address {
+  width: 100%;
   margin-top: 6px;
   font-family: monospace;
   font-size: 14px;
@@ -163,4 +164,59 @@ body {
 .task-form-btn:hover {
   background: #1f2937;
   box-shadow: 0 0 10px rgba(255,255,255,0.15);
+}
+
+/* Task Card estilo nota */
+.task-card {
+  background: linear-gradient(180deg, #1a1c22, #0f1015);
+  border-left: 6px solid #2dd4bf; /* un toque de color para la nota */
+  border-radius: 14px;
+  padding: 18px 16px;
+  margin-bottom: 20px; /* más separación entre notas */
+  box-shadow: 
+    0 8px 25px rgba(0,0,0,0.6),
+    inset 0 1px 0 rgba(255,255,255,0.03);
+  transition: transform 0.2s ease, box-shadow 0.2s ease,  border 0.2s ease;
+}
+
+.task-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 
+    0 12px 35px rgba(0,0,0,0.7),
+    inset 0 1px 0 rgba(255,255,255,0.05);
+    border: 1px solid rgba(255, 255, 255, 0.342);
+}
+
+.task-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.task-card-title {
+  font-weight: 700;
+  font-size: 17px;
+  color: #ffffff;
+}
+
+.task-card-body p {
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #e0e0e0;
+  line-height: 1.4;
+}
+
+.task-card-body small {
+  color: #8c92a0;
+}
+
+.task-card-switch input:checked {
+  accent-color: #2dd4bf;
+}
+
+/* Checkbox estilo toggle */
+.form-check-input {
+  width: 40px;
+  height: 20px;
 }
