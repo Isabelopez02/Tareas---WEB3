@@ -23,4 +23,18 @@ contract("TaskContract", () =>{
         // Cndiciones a cumplir para que sea correcto
         assert.equal(tarea.id.toNumber(), contador);
     })
+
+    it ('Funcion crear correcta', async () => {
+        const crear = await this.taskContract.createTask(
+            "tarea2",
+            "Descripcion2"
+        );
+        const tareaEvento = crear.logs[0].args;
+        const counter = await this.taskContract.contador();
+        assert.equal(counter, 2);
+        assert.equal(tareaEvento.id.toNumber(), 2);
+        assert.equal(tareaEvento.tittle, "tarea2");
+        assert.equal(tareaEvento.descripcion, "Descripcion2")
+
+    })
 })
