@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@truffle/contract": "^4.6.31",
     "bootstrap": "^5.3.8",
     "lite-server": "^2.6.1"
   },
@@ -9,10 +10,9 @@
   "directories": {
     "test": "test"
   },
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev" : "lite-server"
+    "dev": "lite-server"
   },
   "repository": {
     "type": "git",

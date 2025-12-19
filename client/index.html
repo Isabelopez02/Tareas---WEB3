@@ -36,17 +36,17 @@
             </div>
           </div>
 
-          <form class="task-form-bank">
+          <form class="task-form-bank" id="taskForm">
             <h6 class="task-form-title">Nueva tarea</h6>
 
             <div class="task-form-group">
               <label>Título</label>
-              <input type="text" placeholder="Ej. Pagar proveedor" />
+              <input name="tittle" type="text" placeholder="Ej. Pagar proveedor" />
             </div>
 
             <div class="task-form-group">
               <label>Descripción</label>
-              <textarea rows="3" placeholder="Detalles de la tarea"></textarea>
+              <textarea name="descripcion" rows="3" placeholder="Detalles de la tarea"></textarea>
             </div>
 
             <button type="submit" class="task-form-btn">Guardar tarea</button>
@@ -58,6 +58,7 @@
       </div>
     </div>
   </body>
-
+  <script src="./libs/@truffle/contract/browser-dist/truffle-contract.min.js"></script>
   <script src="./app.js"></script>
+  <script src="./ui.js"></script>
 </html>
