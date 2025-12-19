@@ -11,10 +11,46 @@
     <div class="container py-5">
       <div class="row">
         <div class="col-md-4">
-          <div class="card bg-dark">
-            <h1>Dapp</h1>
-            <h6 class="text-muted"></h6>
+          <div class="wallet-bank">
+            <div class="wallet-bank-header">
+              <div class="wallet-bank-icon">🏦</div>
+
+              <div>
+                <h6 class="wallet-bank-title">Digital Wallet</h6>
+                <small class="wallet-bank-subtitle">Admin Dashboard</small>
+              </div>
+            </div>
+
+            <div class="wallet-bank-divider"></div>
+
+            <div class="wallet-bank-info">
+              <span class="wallet-bank-label">Wallet Address</span>
+              <div class="wallet-bank-address">0x1234...ABCD</div>
+            </div>
+
+            <div class="wallet-bank-footer">
+              <span class="wallet-bank-status">
+                <span class="wallet-bank-dot"></span>
+                Connected
+              </span>
+            </div>
           </div>
+
+          <form class="task-form-bank">
+            <h6 class="task-form-title">Nueva tarea</h6>
+
+            <div class="task-form-group">
+              <label>Título</label>
+              <input type="text" placeholder="Ej. Pagar proveedor" />
+            </div>
+
+            <div class="task-form-group">
+              <label>Descripción</label>
+              <textarea rows="3" placeholder="Detalles de la tarea"></textarea>
+            </div>
+
+            <button type="submit" class="task-form-btn">Guardar tarea</button>
+          </form>
         </div>
         <div class="col">
           <div class="col-md-8 bg-dark">task list</div>
@@ -22,4 +58,6 @@
       </div>
     </div>
   </body>
+
+  <script src="./app.js"></script>
 </html>

@@ -1,4 +1,166 @@
-body{
-    background: #0a192f;
-    color: white;
+body {
+  background: #0e0f13;
+  color: #ffffff;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+/* Wallet Card */
+.wallet-bank {
+  background: linear-gradient(180deg, #15171d, #0e0f13);
+  border-radius: 16px;
+  margin-bottom:  24px;
+  padding: 22px;
+  border: 1px solid rgba(255,255,255,0.06);
+  box-shadow: 
+    0 10px 30px rgba(0,0,0,0.6),
+    inset 0 1px 0 rgba(255,255,255,0.05);
+}
+
+/* Header */
+.wallet-bank-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.wallet-bank-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: #000;
+  border: 1px solid rgba(255,255,255,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: #fff;
+}
+
+/* Titles */
+.wallet-bank-title {
+  margin: 0;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+}
+
+.wallet-bank-subtitle {
+  color: #9ba0aa;
+}
+
+/* Divider */
+.wallet-bank-divider {
+  height: 1px;
+  background: rgba(255,255,255,0.08);
+  margin: 18px 0;
+}
+
+/* Info */
+.wallet-bank-label {
+  font-size: 12px;
+  color: #8c92a0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.wallet-bank-address {
+  margin-top: 6px;
+  font-family: monospace;
+  font-size: 14px;
+  color: #ffffff;
+}
+
+/* Footer */
+.wallet-bank-footer {
+  margin-top: 16px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.wallet-bank-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #c9f3df;
+}
+
+.wallet-bank-dot {
+  width: 8px;
+  height: 8px;
+  background: #2dd4bf;
+  border-radius: 50%;
+}
+
+.task-form-bank {
+  background: linear-gradient(180deg, #15171d, #0e0f13);
+  border-radius: 16px;
+  padding: 20px;
+  border: 1px solid rgba(255,255,255,0.06);
+  box-shadow: 
+    0 10px 30px rgba(0,0,0,0.6),
+    inset 0 1px 0 rgba(255,255,255,0.04);
+}
+
+/* Title */
+.task-form-title {
+  margin-bottom: 16px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+}
+
+/* Groups */
+.task-form-group {
+  margin-bottom: 14px;
+}
+
+.task-form-group label {
+  display: block;
+  font-size: 12px;
+  color: #8c92a0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 6px;
+}
+
+/* Inputs */
+.task-form-group input,
+.task-form-group textarea {
+  width: 100%;
+  background: #0e0f13;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 10px;
+  padding: 10px 12px;
+  color: #ffffff;
+  font-size: 14px;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+.task-form-group input::placeholder,
+.task-form-group textarea::placeholder {
+  color: #6f7685;
+}
+
+.task-form-group input:focus,
+.task-form-group textarea:focus {
+  outline: none;
+  border-color: #2dd4bf;
+  box-shadow: 0 0 0 2px rgba(45,212,191,0.15);
+}
+
+/* Button */
+.task-form-btn {
+  width: 100%;
+  margin-top: 10px;
+  background: #111827;
+  color: #ffffff;
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 12px;
+  padding: 10px;
+  font-weight: 500;
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.task-form-btn:hover {
+  background: #1f2937;
+  box-shadow: 0 0 10px rgba(255,255,255,0.15);
 }
