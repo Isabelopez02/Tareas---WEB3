@@ -10,7 +10,7 @@ y nescesitan el codigo de acceso para realizar cualquier accion
 <table align="left">
 <tr border="none">
 
-<td width="40%" align="center">
+<td width="20%" align="center">
   <img src="/assets/img1.png" alt="GitHub Streak" />
 </td>
 
