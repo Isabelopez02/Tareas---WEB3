@@ -1,3 +1,9 @@
+<h3 align="center">
+  Etherum Notas.
+<hr>
+</h3>
+
+
 <!-- Analisis de dashboard -->
 Esta es una Aplicación Descentralizada (DApp) diseñada para gestionar tareas de forma transparente y segura.
 A diferencia de una aplicación tradicional, estos registros están almacenados directamente en la Blockchain de Ethereum.
@@ -57,3 +63,5 @@ Explicacion:
 
 ```
 <hr>
+
+<
